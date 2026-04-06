@@ -1,18 +1,23 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { User } from "lucide-react";
 
+const fade = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeInOut" } },
+};
+
 const AboutSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: false, margin: "-80px" });
 
   return (
     <section id="about" className="section-padding max-w-5xl mx-auto" ref={ref}>
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
+        variants={fade}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        transition={{ duration: 0.7, ease: "easeInOut" }}
       >
         <div className="flex items-center gap-3 mb-12">
           <User size={16} className="text-accent" />
