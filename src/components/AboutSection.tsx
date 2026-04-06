@@ -4,7 +4,7 @@ import { User } from "lucide-react";
 
 const fade = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeInOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeInOut" as const } },
 };
 
 const AboutSection = () => {
