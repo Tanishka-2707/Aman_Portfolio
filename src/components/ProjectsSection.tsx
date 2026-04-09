@@ -35,14 +35,14 @@ const projects = [
 
 const ProjectsSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: false, margin: "-80px" });
+  const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="projects" className="section-padding max-w-6xl mx-auto" ref={ref}>
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
       >
         <div className="flex items-center gap-3 mb-12">
           <Rocket size={16} className="text-accent" />
@@ -55,8 +55,8 @@ const ProjectsSection = () => {
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: i * 0.1, ease: "easeInOut" }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: i * 0.15 }}
             className="bg-card border border-border rounded-lg overflow-hidden card-hover group"
           >
             {/* Image placeholder */}
@@ -87,16 +87,16 @@ const ProjectsSection = () => {
                 ))}
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-3">
                 <a
                   href={project.github}
-                  className="flex items-center gap-2 font-mono text-xs tracking-widest text-muted-foreground hover:text-foreground transition-colors duration-300"
+                  className="flex items-center gap-2 font-mono text-xs tracking-widest text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <Github size={14} /> CODE
                 </a>
                 <a
                   href="#"
-                  className="flex items-center gap-2 font-mono text-xs tracking-widest text-muted-foreground hover:text-accent transition-colors duration-300"
+                  className="flex items-center gap-2 font-mono text-xs tracking-widest text-muted-foreground hover:text-accent transition-colors"
                 >
                   <ExternalLink size={14} /> VIEW
                 </a>

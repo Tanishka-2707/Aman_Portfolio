@@ -3,22 +3,38 @@ import { useRef } from "react";
 import { Globe, Code, Smartphone, Brain } from "lucide-react";
 
 const categories = [
-  { title: "Web Development", icon: Globe, skills: ["HTML", "CSS", "JavaScript", "React.js", "Django", "MongoDB", "Firebase"] },
-  { title: "Programming", icon: Code, skills: ["C++", "Python", "OOP", "Data Structures & Algorithms"] },
-  { title: "App Development", icon: Smartphone, skills: ["Flutter", "REST APIs", "Deployment"] },
-  { title: "AI / ML", icon: Brain, skills: ["TensorFlow", "OpenCV", "NLP", "Computer Vision"] },
+  {
+    title: "Web Development",
+    icon: Globe,
+    skills: ["HTML", "CSS", "JavaScript", "React.js", "Django", "MongoDB", "Firebase"],
+  },
+  {
+    title: "Programming",
+    icon: Code,
+    skills: ["C++", "Python", "OOP", "Data Structures & Algorithms"],
+  },
+  {
+    title: "App Development",
+    icon: Smartphone,
+    skills: ["Flutter", "REST APIs", "Deployment"],
+  },
+  {
+    title: "AI / ML",
+    icon: Brain,
+    skills: ["TensorFlow", "OpenCV", "NLP", "Computer Vision"],
+  },
 ];
 
 const SkillsSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: false, margin: "-80px" });
+  const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="skills" className="section-padding max-w-6xl mx-auto" ref={ref}>
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
       >
         <div className="flex items-center gap-3 mb-12">
           <Code size={16} className="text-accent" />
@@ -31,8 +47,8 @@ const SkillsSection = () => {
           <motion.div
             key={cat.title}
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: i * 0.1, ease: "easeInOut" }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: i * 0.15 }}
             className="bg-card border border-border rounded-lg p-6 card-hover"
           >
             <div className="flex items-center gap-3 mb-5">

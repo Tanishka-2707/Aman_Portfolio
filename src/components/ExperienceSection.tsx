@@ -14,25 +14,31 @@ const experiences = [
   {
     role: "Android App Developer",
     company: "Prodigy Infotech",
-    points: ["Worked on real-world Android projects", "Contributed to full app lifecycle"],
+    points: [
+      "Worked on real-world Android projects",
+      "Contributed to full app lifecycle",
+    ],
   },
   {
     role: "Business Analyst",
     company: "SpeakX",
-    points: ["Analyzed campaign performance", "Conducted market research"],
+    points: [
+      "Analyzed campaign performance",
+      "Conducted market research",
+    ],
   },
 ];
 
 const ExperienceSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: false, margin: "-80px" });
+  const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="experience" className="section-padding max-w-5xl mx-auto" ref={ref}>
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
       >
         <div className="flex items-center gap-3 mb-12">
           <Briefcase size={16} className="text-accent" />
@@ -41,17 +47,21 @@ const ExperienceSection = () => {
       </motion.div>
 
       <div className="relative">
+        {/* Timeline line */}
         <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border md:left-0" />
+
         <div className="flex flex-col gap-10">
           {experiences.map((exp, i) => (
             <motion.div
               key={exp.company}
               initial={{ opacity: 0, x: -20 }}
-              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-              transition={{ duration: 0.6, delay: i * 0.15, ease: "easeInOut" }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
               className="relative pl-8 md:pl-10"
             >
+              {/* Dot */}
               <div className="absolute left-0 top-2 w-[14px] h-[14px] rounded-full border-2 border-accent bg-background md:left-[-7px]" />
+
               <h3 className="font-heading text-lg font-semibold text-foreground">{exp.role}</h3>
               <p className="font-mono text-xs tracking-widest text-accent mb-3">{exp.company}</p>
               <ul className="space-y-1.5">

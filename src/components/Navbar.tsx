@@ -25,7 +25,7 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -80 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
+      transition={{ duration: 0.6, delay: 1 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled ? "nav-blur border-b border-border" : ""
       }`}
@@ -48,7 +48,7 @@ const Navbar = () => {
           <a
             href="/resume.pdf"
             download
-            className="font-mono text-xs tracking-widest px-4 py-2 border border-action/30 text-action hover:bg-action hover:text-action-foreground transition-all duration-300 rounded-sm"
+            className="font-mono text-xs tracking-widest px-4 py-2 border border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 rounded-sm"
           >
             RESUME
           </a>
@@ -68,7 +68,6 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ ease: "easeInOut" }}
             className="md:hidden nav-blur border-b border-border"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
@@ -85,7 +84,7 @@ const Navbar = () => {
               <a
                 href="/resume.pdf"
                 download
-                className="font-mono text-sm tracking-widest text-action"
+                className="font-mono text-sm tracking-widest text-accent"
               >
                 RESUME ↓
               </a>
