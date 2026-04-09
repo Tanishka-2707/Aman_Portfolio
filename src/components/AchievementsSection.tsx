@@ -10,16 +10,18 @@ const achievements = [
   { icon: Users, text: "Leadership: GDSC, Sports Secretary, Event Organizer" },
 ];
 
+const smooth = { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as const };
+
 const AchievementsSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
     <section id="achievements" className="section-padding max-w-5xl mx-auto" ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+        transition={smooth}
       >
         <div className="flex items-center gap-3 mb-12">
           <Trophy size={16} className="text-accent" />
@@ -32,9 +34,9 @@ const AchievementsSection = () => {
           <motion.div
             key={i}
             initial={{ opacity: 0, x: -20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg card-hover"
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            transition={{ ...smooth, delay: i * 0.08 }}
+            className={`flex items-center gap-4 p-4 bg-card border border-border rounded-lg card-hover ${i % 2 === 0 ? "glow-beige" : "glow-teal"}`}
           >
             <ach.icon size={18} className="text-accent shrink-0" />
             <p className="text-foreground text-sm md:text-base">{ach.text}</p>

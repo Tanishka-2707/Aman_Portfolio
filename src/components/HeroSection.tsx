@@ -10,19 +10,19 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-[0.35]"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/70 to-background" />
       </div>
 
-      {/* Top Left */}
+      {/* Top Left - shifted right to avoid AK overlap */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.8 }}
-        className="absolute top-6 left-6 md:left-12 flex gap-4"
+        className="absolute top-6 left-24 md:left-32 flex gap-4"
       >
         <span className="font-mono text-[10px] tracking-widest-xl text-accent/70 border border-accent/20 px-3 py-1 rounded-sm">
           DEV MODE
@@ -32,30 +32,12 @@ const HeroSection = () => {
         </span>
       </motion.div>
 
-      {/* Top Right Icons */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="absolute top-6 right-6 md:right-12 flex gap-4"
-      >
-        <a href="https://github.com/Amanjaiswal027" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-          <Github size={18} />
-        </a>
-        <a href="https://linkedin.com/in/aman-kumar-861905261" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-          <Linkedin size={18} />
-        </a>
-        <a href="mailto:amanjais1327@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
-          <Mail size={18} />
-        </a>
-      </motion.div>
-
       {/* Center Content */}
       <div className="relative z-10 text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
+          transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] as const }}
           className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold tracking-ultra text-foreground glow-white"
         >
           WELCOME
@@ -63,7 +45,7 @@ const HeroSection = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const }}
           className="font-mono text-xs md:text-sm tracking-widest-xl text-muted-foreground mt-6"
         >
           AMAN KUMAR <span className="text-accent">//</span> FULL STACK DEVELOPER
@@ -77,23 +59,34 @@ const HeroSection = () => {
         transition={{ delay: 1.2, duration: 0.8 }}
         className="absolute right-6 md:right-12 top-1/2 -translate-y-1/2"
       >
-        <p className="font-mono text-[10px] tracking-widest text-muted-foreground/50 writing-mode-vertical"
+        <p className="font-mono text-[10px] tracking-widest text-muted-foreground/50"
           style={{ writingMode: "vertical-rl" }}
         >
           SCROLL TO EXPLORE
         </p>
       </motion.div>
 
-      {/* Bottom Hashtags */}
+      {/* Bottom row: hashtags left, social icons right */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}
-        className="absolute bottom-8 left-6 md:left-12"
+        className="absolute bottom-8 left-6 md:left-12 right-6 md:right-12 flex items-center justify-between"
       >
         <p className="font-mono text-[10px] tracking-widest text-muted-foreground/40">
           #developer #fullstack #ai #ml #innovation
         </p>
+        <div className="flex gap-4">
+          <a href="https://github.com/Amanjaiswal027" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+            <Github size={18} />
+          </a>
+          <a href="https://linkedin.com/in/aman-kumar-861905261" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+            <Linkedin size={18} />
+          </a>
+          <a href="mailto:amanjais1327@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+            <Mail size={18} />
+          </a>
+        </div>
       </motion.div>
     </section>
   );
