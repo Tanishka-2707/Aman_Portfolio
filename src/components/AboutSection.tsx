@@ -42,7 +42,7 @@ const AboutSection = () => {
 
         {/* Profile image placeholder with glassmorphism */}
         <div className="w-full md:w-56 lg:w-64 shrink-0">
-          <div className="aspect-[3/4] rounded-lg border border-foreground/10 bg-card/30 backdrop-blur-md flex items-center justify-center shadow-lg">
+          <div className="aspect-[3/4] rounded-lg border border-foreground/10 bg-card/30 backdrop-blur-md flex items-center justify-center shadow-lg transition-all duration-500 ease-in-out hover:scale-[1.04] hover:shadow-[0_0_30px_hsl(var(--glow-beige)/0.2),0_0_60px_hsl(var(--glow-teal)/0.1)] hover:border-foreground/20 cursor-pointer">
             <span className="font-mono text-[10px] tracking-widest text-muted-foreground/30 uppercase">
               Profile Image
             </span>

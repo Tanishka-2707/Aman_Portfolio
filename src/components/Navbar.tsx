@@ -35,12 +35,12 @@ const Navbar = () => {
           AK<span className="text-accent">.</span>
         </a>
 
-        <div className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8">
+        <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-7">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="font-mono text-[clamp(0.6rem,0.7vw,0.75rem)] tracking-widest text-muted-foreground hover:text-foreground transition-colors duration-300 whitespace-nowrap"
+              className="font-mono text-[clamp(0.55rem,0.65vw,0.7rem)] tracking-widest text-muted-foreground hover:text-foreground transition-colors duration-300 whitespace-nowrap"
             >
               {item.label}
             </a>
@@ -48,7 +48,7 @@ const Navbar = () => {
           <a
             href="/resume.pdf"
             download
-            className="font-mono text-[clamp(0.6rem,0.7vw,0.75rem)] tracking-widest px-3 py-1.5 border border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 rounded-sm whitespace-nowrap shrink-0"
+            className="font-mono text-[clamp(0.55rem,0.65vw,0.7rem)] tracking-widest px-3 py-1.5 border border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 rounded-sm whitespace-nowrap shrink-0"
           >
             RESUME
           </a>
@@ -56,7 +56,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-foreground"
+          className="md:hidden text-foreground"
         >
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -69,7 +69,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] }}
-            className="lg:hidden nav-blur border-b border-border"
+            className="md:hidden nav-blur border-b border-border"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
               {navItems.map((item) => (
