@@ -25,10 +25,10 @@ const AboutSection = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ ...smoothTransition, delay: 0.15 }}
-        className="flex flex-col md:flex-row gap-10 md:gap-16"
+        className="flex flex-col md:flex-row gap-10 md:gap-12 items-start"
       >
         {/* Text */}
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <h3 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight">
             Building the future,<br />
             <span className="text-gradient-accent">one line at a time.</span>
@@ -40,9 +40,9 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* Profile image placeholder */}
-        <div className="w-full md:w-72 lg:w-80 shrink-0">
-          <div className="aspect-[3/4] rounded-lg border border-border bg-card/50 flex items-center justify-center">
+        {/* Profile image placeholder with glassmorphism */}
+        <div className="w-full md:w-56 lg:w-64 shrink-0">
+          <div className="aspect-[3/4] rounded-lg border border-foreground/10 bg-card/30 backdrop-blur-md flex items-center justify-center shadow-lg">
             <span className="font-mono text-[10px] tracking-widest text-muted-foreground/30 uppercase">
               Profile Image
             </span>
