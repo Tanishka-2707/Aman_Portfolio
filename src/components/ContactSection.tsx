@@ -9,7 +9,7 @@ const contactLinks = [
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/aman-kumar-861905261" },
 ];
 
-const smooth = { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as const };
+const smooth = { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] };
 
 const ContactSection = () => {
   const ref = useRef(null);
