@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { User } from "lucide-react";
 
-const smoothTransition = { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as const };
+const smoothTransition = { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] };
 
 const AboutSection = () => {
   const ref = useRef(null);
