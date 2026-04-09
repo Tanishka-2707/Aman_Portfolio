@@ -37,7 +37,7 @@ const HeroSection = () => {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] as const }}
           className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold tracking-ultra text-foreground glow-white"
         >
           WELCOME
@@ -45,7 +45,7 @@ const HeroSection = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const }}
           className="font-mono text-xs md:text-sm tracking-widest-xl text-muted-foreground mt-6"
         >
           AMAN KUMAR <span className="text-accent">//</span> FULL STACK DEVELOPER

@@ -10,7 +10,7 @@ const achievements = [
   { icon: Users, text: "Leadership: GDSC, Sports Secretary, Event Organizer" },
 ];
 
-const smooth = { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] };
+const smooth = { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as const };
 
 const AchievementsSection = () => {
   const ref = useRef(null);
