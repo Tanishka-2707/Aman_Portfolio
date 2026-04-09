@@ -38,6 +38,8 @@
 
     --glow-accent: 12 80% 55%;
     --glow-white: 0 0% 100%;
+    --glow-beige: 38 70% 70%;
+    --glow-teal: 174 60% 50%;
 
     --sidebar-background: 0 0% 6%;
     --sidebar-foreground: 0 0% 92%;
@@ -57,7 +59,7 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    cursor: none;
+    cursor: default;
   }
 
   html {
@@ -97,13 +99,22 @@
   }
 
   .card-hover {
-    @apply transition-all duration-500 ease-out;
+    @apply transition-all duration-500 ease-in-out;
   }
 
   .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 0 30px hsl(var(--glow-accent) / 0.1);
-    border-color: hsl(var(--glow-accent) / 0.3);
+  }
+
+  /* Alternating beige/teal glow via CSS counter trick - beige by default */
+  .card-hover.glow-beige:hover {
+    box-shadow: 0 0 30px hsl(var(--glow-beige) / 0.15), 0 0 60px hsl(var(--glow-beige) / 0.05);
+    border-color: hsl(var(--glow-beige) / 0.3);
+  }
+
+  .card-hover.glow-teal:hover {
+    box-shadow: 0 0 30px hsl(var(--glow-teal) / 0.15), 0 0 60px hsl(var(--glow-teal) / 0.05);
+    border-color: hsl(var(--glow-teal) / 0.3);
   }
 
   .nav-blur {

@@ -33,16 +33,18 @@ const projects = [
   },
 ];
 
+const smooth = { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] };
+
 const ProjectsSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
     <section id="projects" className="section-padding max-w-6xl mx-auto" ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+        transition={smooth}
       >
         <div className="flex items-center gap-3 mb-12">
           <Rocket size={16} className="text-accent" />
@@ -55,18 +57,17 @@ const ProjectsSection = () => {
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: i * 0.15 }}
-            className="bg-card border border-border rounded-lg overflow-hidden card-hover group"
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ ...smooth, delay: i * 0.12 }}
+            className={`bg-card border border-border rounded-lg overflow-hidden card-hover group ${i % 2 === 0 ? "glow-teal" : "glow-beige"}`}
           >
-            {/* Image placeholder */}
             <div className="h-48 bg-secondary/50 flex items-center justify-center border-b border-border relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
               <span className="font-mono text-xs text-muted-foreground/40 tracking-widest">PROJECT IMAGE</span>
             </div>
 
             <div className="p-6">
-              <h3 className="font-heading text-xl font-bold text-foreground mb-1 group-hover:text-accent transition-colors duration-300">
+              <h3 className="font-heading text-xl font-bold text-foreground mb-1 group-hover:text-accent transition-colors duration-300 ease-in-out">
                 {project.title}
               </h3>
               <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-3 uppercase">
@@ -90,13 +91,13 @@ const ProjectsSection = () => {
               <div className="flex gap-3">
                 <a
                   href={project.github}
-                  className="flex items-center gap-2 font-mono text-xs tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+                  className="flex items-center gap-2 font-mono text-xs tracking-widest text-muted-foreground hover:text-foreground transition-colors duration-300"
                 >
                   <Github size={14} /> CODE
                 </a>
                 <a
                   href="#"
-                  className="flex items-center gap-2 font-mono text-xs tracking-widest text-muted-foreground hover:text-accent transition-colors"
+                  className="flex items-center gap-2 font-mono text-xs tracking-widest text-muted-foreground hover:text-accent transition-colors duration-300"
                 >
                   <ExternalLink size={14} /> VIEW
                 </a>
