@@ -11,24 +11,17 @@ const AboutSection = () => {
   return (
     <section id="about" className="section-padding max-w-5xl mx-auto" ref={ref}>
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-        transition={smoothTransition}
-      >
-        <div className="flex items-center gap-3 mb-12">
-          <User size={16} className="text-accent" />
-          <h2 className="font-mono text-xs tracking-widest-xl text-accent uppercase">About</h2>
-        </div>
-      </motion.div>
-
-      <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ ...smoothTransition, delay: 0.15 }}
-        className="flex flex-col md:flex-row gap-10 md:gap-12 items-start"
+        transition={smoothTransition}
+        className="flex flex-col md:flex-row gap-10 md:gap-12 items-stretch"
       >
         {/* Text */}
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0 flex flex-col">
+          <div className="flex items-center gap-3 mb-8">
+            <User size={16} className="text-accent" />
+            <h2 className="font-mono text-xs tracking-widest-xl text-accent uppercase">About</h2>
+          </div>
           <h3 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight">
             Building the future,<br />
             <span className="text-gradient-accent">one line at a time.</span>
@@ -40,9 +33,9 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* Profile image placeholder with glassmorphism */}
-        <div className="w-full md:w-56 lg:w-64 shrink-0">
-          <div className="aspect-[3/4] rounded-lg border border-foreground/10 bg-card/30 backdrop-blur-md flex items-center justify-center shadow-lg transition-all duration-500 ease-in-out hover:scale-[1.04] hover:shadow-[0_0_30px_hsl(var(--glow-beige)/0.2),0_0_60px_hsl(var(--glow-teal)/0.1)] hover:border-foreground/20 cursor-pointer">
+        {/* Profile image — spans full height of text block */}
+        <div className="w-full md:w-48 lg:w-56 shrink-0 flex">
+          <div className="w-full rounded-lg border border-foreground/10 bg-card/30 backdrop-blur-md flex items-center justify-center shadow-lg transition-all duration-500 ease-in-out hover:scale-[1.04] hover:shadow-[0_0_30px_hsl(var(--glow-beige)/0.2),0_0_60px_hsl(var(--glow-teal)/0.1)] hover:border-foreground/20 cursor-pointer min-h-[280px] md:min-h-0">
             <span className="font-mono text-[10px] tracking-widest text-muted-foreground/30 uppercase">
               Profile Image
             </span>
