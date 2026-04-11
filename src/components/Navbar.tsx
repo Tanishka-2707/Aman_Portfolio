@@ -77,15 +77,15 @@ const Navbar = () => {
                   key={item.label}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="font-mono text-sm tracking-widest text-muted-foreground hover:text-foreground transition-colors"
-                >
+                  className="font-mono text-[clamp(0.55rem,0.65vw,0.7rem)] tracking-widest text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 whitespace-nowrap"                
+                  >
                   {item.label}
                 </a>
               ))}
               <a
                 href="/resume.pdf"
                 download
-                className="font-mono text-sm tracking-widest text-accent"
+                className="font-mono text-[clamp(0.55rem,0.65vw,0.7rem)] tracking-widest px-3 py-1.5 border border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-105 rounded-sm whitespace-nowrap shrink-0"
               >
                 RESUME ↓
               </a>

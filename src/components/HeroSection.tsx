@@ -10,7 +10,7 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover opacity-[0.35]"
+          className="w-full h-full object-cover opacity-[1.0]"
           width={1920}
           height={1080}
         />
@@ -83,7 +83,12 @@ const HeroSection = () => {
           <a href="https://linkedin.com/in/aman-kumar-861905261" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
             <Linkedin size={18} />
           </a>
-          <a href="mailto:amanjais1327@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=amanjais1327@gmail.com&su=Let's%20Connect&body=Hi%20Aman"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110"
+          >
             <Mail size={18} />
           </a>
         </div>

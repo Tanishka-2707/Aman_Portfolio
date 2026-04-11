@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { Mail, Phone, Github, Linkedin, Send } from "lucide-react";
 
 const contactLinks = [
-  { icon: Mail, label: "amanjais1327@gmail.com", href: "mailto:amanjais1327@gmail.com" },
+  { icon: Mail, label: "amanjais1327@gmail.com", href: "https://mail.google.com/mail/?view=cm&fs=1&to=amanjais1327@gmail.com&su=Let's%20Connect&body=Hi%20Aman" },
   { icon: Phone, label: "8340233902", href: "tel:8340233902" },
   { icon: Github, label: "GitHub", href: "https://github.com/Amanjaiswal027" },
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/aman-kumar-861905261" },

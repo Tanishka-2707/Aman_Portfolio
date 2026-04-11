@@ -40,7 +40,9 @@ const SkillsSection = () => {
       >
         <div className="flex items-center gap-3 mb-12">
           <Code size={16} className="text-accent" />
-          <h2 className="font-mono text-xs tracking-widest-xl text-accent uppercase">Skills</h2>
+          <h2 className="font-mono text-xs tracking-widest-xl text-accent uppercase">
+            Skills
+          </h2>
         </div>
       </motion.div>
 
@@ -51,7 +53,7 @@ const SkillsSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ ...smooth, delay: i * 0.12 }}
-            className={`bg-card border border-border rounded-lg p-6 card-hover ${i % 2 === 0 ? "glow-beige" : "glow-teal"}`}
+            className="bg-card border border-border rounded-lg p-6 card-hover glow-beige"
           >
             <div className="flex items-center gap-3 mb-5">
               <cat.icon size={18} className="text-accent" />
@@ -59,6 +61,7 @@ const SkillsSection = () => {
                 {cat.title}
               </h3>
             </div>
+
             <div className="flex flex-wrap gap-2">
               {cat.skills.map((skill) => (
                 <span

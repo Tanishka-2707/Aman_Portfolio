@@ -36,9 +36,11 @@ const AboutSection = () => {
         {/* Profile image — spans full height of text block */}
         <div className="w-full md:w-48 lg:w-56 shrink-0 flex">
           <div className="w-full rounded-lg border border-foreground/10 bg-card/30 backdrop-blur-md flex items-center justify-center shadow-lg transition-all duration-500 ease-in-out hover:scale-[1.04] hover:shadow-[0_0_30px_hsl(var(--glow-beige)/0.2),0_0_60px_hsl(var(--glow-teal)/0.1)] hover:border-foreground/20 cursor-pointer min-h-[280px] md:min-h-0">
-            <span className="font-mono text-[10px] tracking-widest text-muted-foreground/30 uppercase">
-              Profile Image
-            </span>
+            <img
+              src="/Profile.png"
+              alt="Profile"
+              className="w-full h-full object-cover rounded-lg"
+            />
           </div>
         </div>
       </motion.div>
