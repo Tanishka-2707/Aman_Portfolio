@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import leetcode from "@/assets/leetcode.png";
 
 const HeroSection = () => {
   return (
@@ -79,6 +80,13 @@ const HeroSection = () => {
         <div className="flex gap-4">
           <a href="https://github.com/Amanjaiswal027" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
             <Github size={18} />
+          </a>
+          <a href="https://leetcode.com/u/Aman_jaiswal013/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110">
+            <img
+              src={leetcode}
+              alt="LeetCode"
+              className="w-[18px] h-[18px] object-contain"
+            />
           </a>
           <a href="https://linkedin.com/in/aman-kumar-861905261" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
             <Linkedin size={18} />

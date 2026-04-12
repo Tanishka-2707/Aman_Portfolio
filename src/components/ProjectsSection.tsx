@@ -2,6 +2,9 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react"; 
 import { Rocket, Github, ExternalLink } from "lucide-react"; 
 import samaya from "../assets/samaya.png"; 
+import cyvox from "../assets/cyvox.png"; 
+import anibud from "../assets/anibud.png";
+import flutter_app from "../assets/flutter_app.png";
 
 const projects = [ 
   { 
@@ -9,7 +12,8 @@ const projects = [
     subtitle: "Voice Authentication & Scam Reporting System", 
     description: "Secure voice-based authentication platform with admin dashboard", 
     tech: ["Node.js", "APIs", "Voice Processing"], 
-    github: "https://github.com/Amanjaiswal027/CyVox", 
+    github: "https://github.com/CodingPirates70/CyVox-Server", 
+    image: cyvox,
   }, 
   
   { 
@@ -26,7 +30,8 @@ const projects = [
     subtitle: "AI-Powered Assistant", 
     description: "AI assistant with ChatGPT + DALL·E integration", 
     tech: ["Flutter", "AI APIs"], 
-    github: "https://github.com/Amanjaiswal027/Flutter-Voice-Assistant-App-with-ChatGPT-Dall-E-AI-Image-Generation", 
+    github: "https://github.com/Amanjaiswal027/Flutter-Voice-Assistant-App-with-ChatGPT-Dall-E-AI-Image-Generation",
+    image: flutter_app, 
   }, 
   
   { 
@@ -35,6 +40,7 @@ const projects = [
     description: "Backend infrastructure and team leadership project", 
     tech: ["Firebase", "Firestore"], 
     github: "https://github.com/Amanjaiswal027/Anibud_forked", 
+    image: anibud,
   }, 
 ]; 
 
@@ -62,10 +68,23 @@ const ProjectsSection = () => {
        transition={{ ...smooth, delay: i * 0.12 }} 
        className="bg-card border border-border rounded-lg p-6 card-hover glow-beige" 
       > 
-      <div className="h-48 bg-secondary/50 flex items-center justify-center border-b border-border relative overflow-hidden"> 
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" /> 
-          <span className="font-mono text-xs text-muted-foreground/40 tracking-widest">PROJECT IMAGE</span> 
-        </div> 
+      <div className="h-48 border-b border-border relative overflow-hidden">
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          />
+        ) : (
+          <div className="w-full h-full bg-secondary/50 flex items-center justify-center">
+      <span className="font-mono text-xs text-muted-foreground/40 tracking-widest">
+        PROJECT IMAGE
+      </span>
+    </div>
+  )}
+
+  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent pointer-events-none" />
+</div>
       <div className="p-6"> 
         <h3 className="font-heading text-xl font-bold text-foreground mb-1 group-hover:text-accent transition-colors duration-300 ease-in-out"> 
           {project.title} 
