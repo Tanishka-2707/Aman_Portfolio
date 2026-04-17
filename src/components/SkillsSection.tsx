@@ -11,7 +11,7 @@ const categories = [
   {
     title: "Programming",
     icon: Code,
-    skills: ["C++", "Python", "OOP", "Data Structures & Algorithms"],
+    skills: ["C++", "Python", "OOPs", "Data Structures & Algorithms"],
   },
   {
     title: "App Development",
